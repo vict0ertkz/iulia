@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="themes/distanta.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile.structure-1.4.3.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+<script type="text/javascript">
+function calc(){
+	var dist1=document.getElementById("distanta").value;
+	   var dist=parseInt(dist1);
+	var cons1=document.getElementById("consum").value;
+	   var cons=parseInt(cons1);
+	var pret1=document.getElementById("pretcombustibil").value;
+	   var pret=parseInt(pret1);
+	if (document.getElementById('numarpersoane1').checked)
+	   var a=document.getElementById('numarpersoane1').value;
+	   else 
+	if (document.getElementById('numarpersoane2').checked)
+	   a=document.getElementById('numarpersoane2').value;
+	   else 
+	if (document.getElementById('numarpersoane3').checked)
+	   a=document.getElementById('numarpersoane3').value;
+	   else 
+	if (document.getElementById('numarpersoane4').checked)
+	   a=document.getElementById('numarpersoane4').value;
+	   else 
+	if (document.getElementById('numarpersoane5').checked)
+	   a=document.getElementById('numarpersoane5').value;
+	   
+	  var rez=((dist/100)*cons*pret)/a;
+	  document.getElementById('rezultat').value=rez;
+}
+</script>
+</head>
+<body>
+<div style="width:100%;height:133px;background:url(1.png)"></div>
+	<div id="div1">
+		<div class="text1">
+		<label style="color:yellow;font-weight:bold"for="distanta">Distanta parcursa:</label>
+		</div>
+		<input type="text" class="texte introduse"  id="distanta" placeholder="Introdu numar km" data-clear-btn="true">
+	</div>
+	<div id="div2">
+	<div class="text1">
+		<label style="color:pink;font-weight:bold"for="consum">Consum mediu/100km:</label>
+		</div>
+		<input type="text" class="texte introduse" id="consum" placeholder="Introdu consum in litri">
+	</div>
+	<div id="div3">
+	<div class="text1">
+		<label style="color:pink;font-weight:bold"for="pretcombustibil">Pret combustibil/litru:</label>
+		</div>
+		<input type="text" class="texte introduse" id="pretcombustibil" placeholder="Introdu pretul/litru">
+	</div>
+		<div id="div4numar persoane">
+	<div class="text1">
+		<label style="color:yellow;font-weight:bold">Selectati numarul de persoane:</label>
+		</div>
+		<table width="100%">
+		<tr>
+		<td><input type="radio" name="numar" id="numarpersoane1"checked value="1"><br><label style="color:yellow;font-weight:bold"> 1</label></td>
+		<td><input type="radio" name="numar" id="numarpersoane2" value="2"><br><label style="color:yellow;font-weight:bold"> 2</label></td>
+		<td><input type="radio" name="numar" id="numarpersoane3" value="3"><br><label style="color:yellow;font-weight:bold"> 3</label></td>
+		<td><input type="radio" name="numar" id="numarpersoane4" value="4"><br><label style="color:yellow;font-weight:bold"> 4</label></td>
+		<td><input type="radio" name="numar" id="numarpersoane5" value="5"><br><label style="color:yellow;font-weight:bold"> 5</label></td>
+		</tr>
+		</table>
+	</div>
+	
+	<div id="div5buton">
+		<input type="submit" onclick="calc()"id="butoncalcul" value="Calculeaza">
+	</div>
+    <div id="div6calcul">
+	<div class="text1">
+	<label style="color:yellow;font-weight:bold; font-size:150%; background-color: red">Suma de achitat/persoana:</label>
+		</div>
+		<input type="text" class="texte introduse" id="rezultat" placeholder="Rezultatul calculului excursiei:">
+	</div>
+	
+		
+</body>
+</html>
